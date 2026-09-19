@@ -15,13 +15,11 @@ dependencies:
   flutter_secure_storage: ^9.2.2
   shared_preferences: ^2.5.2
   intl: ^0.20.0
-  intl_utils: ^10.0.0
   uuid: ^4.5.1
   connectivity_plus: ^5.0.2
   fluttertoast: ^8.2.13
   pdf: ^3.10.8
   printing: ^5.12.0
-  path_provider: ^2.13.4
   file_picker: ^8.0.0
   flutter_svg: ^2.2.0
   cached_network_image: ^3.3.1
@@ -31,7 +29,6 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^5.0.0
   mocktail: ^1.0.4
-  build_runner: ^2.4.9
 
 flutter:
   uses-material-design: true

@@ -171,7 +171,7 @@ class Invoice {
 
   Invoice copyWith({String? status, double? amountPaid, String? paymentMethod}) {
     final newAmountPaid = amountPaid ?? this.amountPaid;
-    final newBalance = (totalAmount - newAmountPaid).clamp(0, totalAmount);
+    final double newBalance = (totalAmount - newAmountPaid).clamp(0.0, totalAmount).toDouble();
     return Invoice(
       id: id,
       businessId: businessId,

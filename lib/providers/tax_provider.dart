@@ -14,6 +14,13 @@ class TaxProvider extends ChangeNotifier {
   bool get isLoading => _isLoading;
   String? get errorMessage => _errorMessage;
 
+  /// Convenience accessors for the current period tax figures.
+  double get outputTax => _taxSummary?.outputTax ?? 0;
+  double get inputTax => _taxSummary?.inputTax ?? 0;
+  double get vatPayable => _taxSummary?.vatPayable ?? 0;
+  double get vatRefundable => _taxSummary?.vatRefundable ?? 0;
+  double get netVat => _taxSummary?.netVat ?? 0;
+
   TaxProvider(this._apiClient);
 
   Future<void> fetchTaxSummary() async {

@@ -29,10 +29,14 @@ class DashboardData {
       productCount: data['product_count'] ?? 0,
       outstandingBalance: (data['outstanding_balance'] ?? 0).toDouble(),
       vatPayable: (data['vat_payable'] ?? 0).toDouble(),
-      recentInvoices: (data['recent_invoices'] as List?)?
-          .map((e) => RecentInvoice.fromJson(e)).toList() ?? [],
-      upcomingObligations: (data['upcoming_obligations'] as List?)?
-          .map((e) => UpcomingObligation.fromJson(e)).toList() ?? [],
+      recentInvoices: (data['recent_invoices'] as List?)
+              ?.map((e) => RecentInvoice.fromJson(e))
+              .toList() ??
+          [],
+      upcomingObligations: (data['upcoming_obligations'] as List?)
+              ?.map((e) => UpcomingObligation.fromJson(e))
+              .toList() ??
+          [],
       unreadNotifications: data['unread_notifications'] ?? 0,
     );
   }
