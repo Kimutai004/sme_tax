@@ -11,6 +11,8 @@
 .svn/
 .swiftpm/
 migrate_working_dir/
+/backend/node_modules
+/firebase-backend/node_modules
 
 # IntelliJ related
 *.iml
@@ -43,3 +45,5 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+ode_modules/

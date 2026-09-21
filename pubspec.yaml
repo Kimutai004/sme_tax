@@ -1,4 +1,4 @@
-﻿name: sme_tax
+name: sme_tax
 description: "SME-TAX: A Mobile-First eTIMS Compliance Platform for Kenyan SMEs"
 publish_to: 'none'
 version: 1.0.0+1
@@ -11,18 +11,21 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.8
   provider: ^6.1.4
-  http: ^1.2.3
-  flutter_secure_storage: ^9.2.2
-  shared_preferences: ^2.5.2
   intl: ^0.20.0
   uuid: ^4.5.1
   connectivity_plus: ^5.0.2
   fluttertoast: ^8.2.13
+  shared_preferences: ^2.5.5
+  flutter_secure_storage: ^10.3.4
   pdf: ^3.10.8
   printing: ^5.12.0
   file_picker: ^8.0.0
   flutter_svg: ^2.2.0
   cached_network_image: ^3.3.1
+  firebase_core: ^3.15.2
+  firebase_auth: ^5.4.0
+  cloud_firestore: ^5.5.0
+  firebase_storage: ^12.4.10
 
 dev_dependencies:
   flutter_test:

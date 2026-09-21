@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class ApiClient {
   static String _baseUrl = String.fromEnvironment(
     'API_BASE_URL',
-    defaultValue: 'http://10.0.2.2:3000/api/v1',
+    defaultValue: 'http://10.128.18.95:3000/api/v1',
   );
 
   /// Set the base URL for the API client. Useful for configuring the correct
