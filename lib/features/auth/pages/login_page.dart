@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sme_tax/core/constants/app_colors.dart';
 import 'package:sme_tax/core/widgets/app_button.dart';
@@ -102,7 +102,20 @@ class _LoginPageState extends State<LoginPage> {
                         const SizedBox(height: 16),
                         auth.isLoading
                             ? const AppButton(text: 'Signing In...', isLoading: true)
-                            : AppButton(text: 'Sign In', onPressed: _login),
+                            : Column(
+                                children: [
+                                  AppButton(text: 'Sign In', onPressed: _login),
+                                  if (auth.errorMessage != null)
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 16),
+                                      child: Text(
+                                        auth.errorMessage!,
+                                        style: const TextStyle(color: Colors.red, fontSize: 14),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                ],
+                              ),
                       ],
                     ),
                   ),

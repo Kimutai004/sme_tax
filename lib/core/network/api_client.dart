@@ -2,12 +2,38 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiClient {
-  static const String _baseUrl = String.fromEnvironment(
+  static String _baseUrl = String.fromEnvironment(
     'API_BASE_URL',
     defaultValue: 'http://10.0.2.2:3000/api/v1',
   );
+
+  /// Set the base URL for the API client. Useful for configuring the correct
+  /// URL when running on a physical device instead of an emulator.
+  /// For physical devices, use your computer's local network IP address
+  /// (e.g., http://192.168.1.100:3000/api/v1)
+  static void setBaseUrl(String url) {
+    _baseUrl = url;
+    SharedPreferences.getInstance().then((prefs) {
+      prefs.setString('api_base_url', url);
+    });
+  }
+
+  /// Get the current base URL
+  static String getBaseUrl() {
+    return _baseUrl;
+  }
+
+  /// Load saved base URL from persistent storage
+  static Future<void> loadSavedBaseUrl() async {
+    final prefs = await SharedPreferences.getInstance();
+    final savedUrl = prefs.getString('api_base_url');
+    if (savedUrl != null && savedUrl.isNotEmpty) {
+      _baseUrl = savedUrl;
+    }
+  }
 
   static const FlutterSecureStorage _storage = FlutterSecureStorage();
 

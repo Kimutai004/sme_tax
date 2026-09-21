@@ -8,7 +8,11 @@ import 'package:sme_tax/providers/product_provider.dart';
 import 'package:sme_tax/providers/invoice_provider.dart';
 import 'package:sme_tax/providers/tax_provider.dart';
 import 'package:sme_tax/providers/notification_provider.dart';
+import 'package:sme_tax/core/network/api_client.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // Load saved API base URL before starting the app
+  await ApiClient.loadSavedBaseUrl();
   runApp(const SMEApp());
 }
